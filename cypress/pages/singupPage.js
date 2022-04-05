@@ -7,7 +7,7 @@ class SingupPage {
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
  
     }
-
+        
     fillForm(deliver){
         cy.get('input[name="fullName"]').type(deliver.name)
         cy.get('input[name="cpf"]').type(deliver.cpf)
@@ -34,7 +34,7 @@ class SingupPage {
     modalContentShouldBe(expectedMessage){
         cy.get(".swal2-container .swal2-html-container").should('have.text',expectedMessage)
     }
-// buscando elemento com localizador e testo
+// buscando elemento com localizador e texto
     alertMessageShouldBe(expectedMessage){
      //   cy.get('.alert-error').should('have.text', expectedMessage)
         cy.contains('.alert-error', expectedMessage).should('be.visible')
